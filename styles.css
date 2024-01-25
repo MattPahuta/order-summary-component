@@ -6,16 +6,17 @@ Date: January 2024
 
 :root {
   /* Primary Colors */
-  --clr-primary-400: ;
-
+  --clr-pale-blue: #E0E8FF;
+  --clr-dark-blue: #1F2E55;
+  --clr-blue: #382AE1;
+  --clr-pale-violet: #766CF1;
   /* Neutral Colors */
-  --clr-neutral-100: ;
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(
-      var(--clr-primary-400), 
-      var(--clr-secondary-400));
-
+  --clr-white: #FFFFFF;
+  --clr-soft-white: #F7F9FF;
+  --clr-blue-gray: #717FA6;
+  /* Box Shadows */
+  --box-shadow-card: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
+  --box-shadow-btn: 0px 20px 20px 0px rgba(56, 42, 225, 0.19);
   /* Font Family */
   /* font-family: 'Red Hat Display', sans-serif; */
   --ff-primary: 'Red Hat Display', sans-serif;
@@ -23,15 +24,14 @@ Date: January 2024
   --fw-regular: 500;
   --fw-bold: 700;
   --fw-black: 900;
-
   /* Font Sizes */
   --fs-200: 0.8125rem;
   --fs-300: 0.875rem;
   --fs-400: 0.9375rem;
   --fs-500: 1.375rem;
-
   /* Border radius */
-  --border-radius: 2rem;
+  --border-radius: 20px;
+  --border-radius_soft: 11px;
 }
 
 @media (min-width: 48rem) {
@@ -78,4 +78,31 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #root, #__next {
   isolation: isolate;
+}
+
+/* Base Styles */
+body {
+
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  line-height: 1.6;
+
+  background-image: url(./images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--clr-pale-blue);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(./images/pattern-background-desktop.svg);
+  }
+}
+
+.card {
+  margin-inline: auto;
+  max-width: 450px;
+  background: var(--clr-white);
 }
