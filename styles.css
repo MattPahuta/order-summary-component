@@ -3,22 +3,21 @@ Author: Matt Pahuta
 https://www.mattpahuta.com
 Date: January 2024
 */
-
 :root {
   /* Primary Colors */
-  --clr-pale-blue: #E0E8FF;
-  --clr-dark-blue: #1F2E55;
+  --clr-pale-blue: hsl(225, 100%, 94%);
+  --clr-dark-blue: hsl(223, 47%, 23%);
   --clr-blue: hsl(245, 75%, 52%);
-  --clr-pale-violet: #766CF1;
+  --clr-pale-violet: hsl(245, 83%, 68%);
   /* Neutral Colors */
-  --clr-white: #FFFFFF;
-  --clr-soft-white: #F7F9FF;
-  --clr-blue-gray: #717FA6;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-soft-white: hsl(225, 100%, 98%);
+  --clr-blue-gray: hsl(224, 23%, 55%);
   /* Box Shadows */
-  --box-shadow-card: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
-  --box-shadow-btn: 0px 20px 20px 0px rgba(56, 42, 225, 0.19);
+  --box-shadow-card: 0 40px 40px -20px hsla(228, 87%, 40%, 0.15);
+  --box-shadow-btn: 0 20px 20px 0 hsla(245, 75%, 52%, 0.19);
+  --box-shadow-btn-cancel: 0 0 0 4px hsla(245, 75%, 52%, 0.6);
   /* Font Family */
-  /* font-family: 'Red Hat Display', sans-serif; */
   --ff-primary: 'Red Hat Display', sans-serif;
   /* Font Weights */
   --fw-regular: 500;
@@ -82,13 +81,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Base Styles */
 body {
-
-  display: grid;
-  place-items: center;
   font-family: var(--ff-primary);
   font-size: var(--fs-400);
   line-height: 1.6;
-
   background-image: url(./images/pattern-background-mobile.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -96,14 +91,19 @@ body {
   color: var(--clr-blue-gray);
 }
 
+.main {
+  height: 100vh;
+  padding: 0 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
 h1, h2 {
-  line-height: 1.05;
-  text-wrap: balance;
   font-weight: var(--fw-black);
   color: var(--clr-dark-blue);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   body {
     background-image: url(./images/pattern-background-desktop.svg);
   }
@@ -118,7 +118,7 @@ button.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: var(--fw-black);
   line-height: normal;
   border-radius: var(--border-radius_soft);
@@ -135,8 +135,6 @@ button.button-pay {
   padding: 15px;  
   background-color: var(--clr-blue);
   color: var(--clr-white);
-
-
   box-shadow: var(--box-shadow-btn);
 }
 
@@ -154,13 +152,11 @@ button.button-pay {
 .button.button-cancel:hover,
 .button.button-cancel:focus-visible {
   color: var(--clr-dark-blue);
-
   outline: none;
-
 }
 
 .button.button-cancel:focus-visible {
-  box-shadow: 0 0 0 4px hsla(245, 75%, 52%, 0.6);
+  box-shadow: var(--box-shadow-btn-cancel);
 }
 
 .card {
@@ -170,13 +166,11 @@ button.button-pay {
   border-radius: var(--border-radius);
   overflow: hidden;
   text-align: center;
+  box-shadow: var(--box-shadow-card);
 }
 
-.card-image {
-  width: 100%; 
-}
 .card-content {
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -184,10 +178,12 @@ button.button-pay {
 
 .card-title {
   font-size: var(--fs-500);
+  line-height: 1.05;
 }
 
 .card-text {
-  max-width: 30ch;
+  max-width: 36ch;
+  align-self: center;
 }
 
 .card-plan-wrapper {
@@ -198,11 +194,21 @@ button.button-pay {
   border-radius: var(--border-radius_soft);
 }
 
+@media (min-width: 48rem) {
+  .card-content {
+    padding: 3rem;
+  }
+  .card-plan-wrapper {
+    padding: 1.5rem;
+  }
+}
+
 .plan-select-wrapper {
   margin-left: 20px;
 }
 
-.plan-select-wrapper h2 {
+.plan-select-wrapper h2,
+.plan-select-wrapper p {
   font-size: var(--fs-300);
 }
 
@@ -211,7 +217,6 @@ button.button-pay {
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
   color: var(--clr-blue);
-
   transition: 220ms all ease-in-out;
 }
 
@@ -221,10 +226,9 @@ button.button-pay {
   color: var(--clr-pale-violet)
 }
 
-
 .card-plan-wrapper a:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px hsla(245, 75%, 52%, 0.6);
+  box-shadow: var(--box-shadow-btn-cancel);
   border-radius: var(--border-radius_soft);
   padding: 0 .25em;
 }
