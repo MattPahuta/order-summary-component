@@ -27,13 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![](./images/project-ss.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [solution URL](https://www.frontendmentor.io/solutions/responsive-card-component-using-flexbox-t6O8PBiOt_)
+- [live site URL](https://order-summary-component-nine-gray.vercel.app/)
 
 ## My process
 
@@ -46,12 +45,11 @@ Users should be able to:
 
 ### Continued development
 
-While learning more advanced tools like React, Astro, Tailwind, etc., I've enjoyed returning to these small, component-based projects to keep my grasp of pure CSS sharp.
+While learning more advanced tools like React, Astro, Tailwind, etc., I've enjoyed returning to these small, component-based projects in order to practice CSS fundamentals.
 
 ### Useful resources
 
-- [HTML and CSS for Beginners](https://www.udemy.com/course/html-and-css-for-beginners-build-a-project/) - Madison Kanna has published a free Udemy short course on HTML and CSS fundamentals that utilizes a walkthrough of this particular design. After completing this challenge, I enjoyed viewing her process and approach to the project and believe her course offers beginners a nice starting point to build upon. 
-
+- [HTML and CSS for Beginners](https://www.udemy.com/course/html-and-css-for-beginners-build-a-project/) - Madison Kanna has published a free Udemy short course on HTML and CSS fundamentals that utilizes a walkthrough of this particular design. After completing this challenge, I enjoyed viewing her process and approach to the project. She offers a great intro to the topic and I believe her course offers beginners a nice starting point to build upon. 
 
 ## Author
 
